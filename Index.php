@@ -3,9 +3,9 @@ require_once("class.DBManager.php");
 require_once("class.redis.php");
 
 if (isset($_REQUEST["add"])) {
-  $todo     = $_REQUEST["todo"];
+  $todo = $_REQUEST["todo"];
   if ($todo) {
-    $dbmanager  = new CDBManager();
+    $dbmanager = new CDBManager();
     $id = $dbmanager->run_sql_return_int("INSERT INTO `todos` (`todo`) VALUES ('".mysql_real_escape_string($todo)."')");
     publishToRedis(json_encode(
                       array(
@@ -18,10 +18,10 @@ if (isset($_REQUEST["add"])) {
                     ));
   }
 } elseif (isset($_REQUEST["update"])) {
-  $id     = $_REQUEST["id"];
-  $todo     = $_REQUEST["todo"];
+  $id   = $_REQUEST["id"];
+  $todo = $_REQUEST["todo"];
   if ($todo && $id) {
-    $dbmanager  = new CDBManager();
+    $dbmanager = new CDBManager();
     $dbmanager->run_sql("UPDATE `todos` SET `todo` = '".mysql_real_escape_string($todo)."' WHERE id = ".$id);
     publishToRedis(json_encode(
                       array(
@@ -34,9 +34,9 @@ if (isset($_REQUEST["add"])) {
                     ));
   } 
 } elseif (isset($_REQUEST["delete"])) {
-  $id     = $_REQUEST["id"];
+  $id = $_REQUEST["id"];
   if ($id) {
-    $dbmanager  = new CDBManager();
+    $dbmanager = new CDBManager();
     $dbmanager->run_sql("DELETE FROM `todos` WHERE id = ".$id);
     publishToRedis(json_encode(
                       array(
