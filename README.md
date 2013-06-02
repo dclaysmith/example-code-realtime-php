@@ -1,10 +1,10 @@
 example-code-realtime-php
 =========================
 
-Example code from my talk about adding realtime functionality to PHP applications using Node and Redis.
+Example code from my talk about adding realtime functionality to PHP applications using Node and Redis. This code assumes you have a php 5 webserver running at http://localhost, with the contents of this repository. To run the application:
 
-Install Node
-------------
+Install Node and npm
+--------------------
 
 Install Node socket.io Package
 ------------------------------
@@ -24,9 +24,14 @@ http://redis.io/topics/quickstart
 Start Redis
 -------------
 
-path-to-redis/src > ./redis-server
+    path-to-redis/src > ./redis-server
 
 Start Node
 ----------
 
-> node sync.js
+    > node sync.js
+
+Open the Webpage
+----------------
+
+http://localhost/Index.php
