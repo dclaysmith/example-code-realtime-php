@@ -6,14 +6,16 @@ Example code from my talk about adding realtime functionality to PHP application
 Install Node and npm
 --------------------
 
-Install Node socket.io Package
-------------------------------
+Here are some suggestions for getting Node and its package manager, npm, up and running. 
+
+https://gist.github.com/isaacs/579814
+
+Install Node Packages
+---------------------
+
+You will need to install two packages using npm:
 
     > npm install socket.io
-
-Install Node redis Package
---------------------------
-
     > npm install redis
 
 Install Redis
